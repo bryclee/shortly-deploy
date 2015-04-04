@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "shortly using express",
   "main": "server.js",
+  "scripts": {
+    "start": "bash ./deploy.sh"
+  },
   "repository": "",
   "license": "Proprietary",
   "private": true,
