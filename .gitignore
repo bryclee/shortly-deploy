@@ -7,8 +7,10 @@ iisnode.yml
 # Icon must ends with two \r.
 Icon
 
-
-
+public/dist
+public/dist/shortly-express.js
+public/dist/shortly-express.min.js
+node_modules/
 
 # Floobits
 .floo

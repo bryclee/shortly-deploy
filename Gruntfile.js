@@ -3,6 +3,22 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     concat: {
+      options: {
+        separator: ';',
+      },
+      distLib: {
+        src: [
+          'public/lib/jquery.js',
+          'public/lib/underscore.js',
+          'public/lib/backbone.js',
+          'public/lib/handlebars.js',
+        ],
+        dest: 'public/dist/lib.js',
+      },
+      distApp: {
+        src: ['public/client/*.js'],
+        dest: 'public/dist/shortly-express.js'
+      }
     },
 
     mochaTest: {
@@ -21,11 +37,26 @@ module.exports = function(grunt) {
     },
 
     uglify: {
+      build: {
+        files: {'public/dist/shortly-express.min.js': ['public/dist/shortly-express.js'],
+                'public/dist/lib.min.js' : ['public/dist/lib.js']}
+      }
     },
 
     jshint: {
       files: [
         // Add filespec list here
+        // '*.js',
+        // 'app/*.js',
+        // 'app/**/*.js',
+        // 'public/**/*.js',
+        // 'test/*.js'
+        'public/lib/jquery.js',
+        'public/lib/underscore.js',
+        'public/lib/backbone.js',
+        'public/lib/handlebars.js',
+        'public/client/*.js'
+
       ],
       options: {
         force: 'true',
@@ -38,6 +69,12 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
+      target: {
+        files: [{
+          src: 'public/style.css',
+          dest: 'public/dist/style.min.css'
+        }]
+      }
     },
 
     watch: {
@@ -94,18 +131,22 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'concat',
+    'uglify',
+    'cssmin'
   ]);
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
-      // add your production server task here
+      //send this to heroku
     } else {
       grunt.task.run([ 'server-dev' ]);
     }
   });
 
   grunt.registerTask('deploy', [
-    // add your deploy tasks here
+    'build',
+    'upload'
   ]);
 
 
