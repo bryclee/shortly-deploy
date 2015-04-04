@@ -8,9 +8,6 @@ iisnode.yml
 Icon
 
 dist
-public/dist
-public/dist/shortly-express.js
-public/dist/shortly-express.min.js
 node_modules/
 
 # Floobits
