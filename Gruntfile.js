@@ -45,12 +45,6 @@ module.exports = function(grunt) {
 
     jshint: {
       files: [
-        // Add filespec list here
-        // '*.js',
-        // 'app/*.js',
-        // 'app/**/*.js',
-        // 'public/**/*.js',
-        // 'test/*.js'
         'public/lib/jquery.js',
         'public/lib/underscore.js',
         'public/lib/backbone.js',
