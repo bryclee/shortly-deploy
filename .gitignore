@@ -7,6 +7,7 @@ iisnode.yml
 # Icon must ends with two \r.
 Icon
 
+dist
 public/dist
 public/dist/shortly-express.js
 public/dist/shortly-express.min.js
