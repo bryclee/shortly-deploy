@@ -1,6 +1,24 @@
 var Bookshelf = require('bookshelf');
 var path = require('path');
+// var mongoose = require('mongoose');
+// var key = require('../db/mongooseLink.js').key;
+// var db = mongoose.createConnection(key);
 
+// db.on('error', console.error.bind(console, 'connection error: '));
+// db.once('open', function(callback) {
+//   console.log(callback);
+// });
+
+// db.collection('urls');
+// db.collection('users');
+
+// var userSchema = new Schema({
+//   id:
+//   username: string,
+//   passsword: string
+// })
+
+// console.log('collections: ', db.collections);
 var db = Bookshelf.initialize({
   client: 'sqlite3',
   connection: {
