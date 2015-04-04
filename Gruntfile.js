@@ -100,7 +100,8 @@ module.exports = function(grunt) {
           'git checkout master',
           'git add .',
           'git commit -m "Heroku build"',
-          'git push heroku master'
+          'git push heroku master',
+          'heroku open'
           ].join('&&')
       }
     },
